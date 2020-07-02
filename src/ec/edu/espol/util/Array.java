@@ -100,9 +100,17 @@ public class Array {
     
     public int min ()
     {
-        return Arrays.stream(this.array)
-            .min()               
-            .orElse(0); 
+        int minimum = this.array[1];
+        for (int i = 0; i < this.getSize(); i++) {
+            if(i != 1)
+            {
+                if(this.array[i] < minimum){
+                    minimum = this.array[i];
+                }
+            }
+        }
+        
+        return minimum;
     }
 
     @Override
